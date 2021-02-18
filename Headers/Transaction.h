@@ -14,6 +14,11 @@ public:
     Transaction(const std::string &id, const std::string &description, const std::string &addresser,
                 const std::string &addressee, float amount);
 
+    //it prints the latest transaction
+    void printTransaction();
+
+    virtual bool execute() = 0;
+
 private:
     std::string id;
     std::string description;

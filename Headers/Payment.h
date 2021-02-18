@@ -12,6 +12,8 @@ public:
     Payment(const std::string &id, const std::string &description, const std::string &addresser,
             const std::string &addressee, float amount);
 
+    bool execute() override;
+
 private:
 };
 
