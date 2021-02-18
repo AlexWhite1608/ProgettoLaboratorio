@@ -23,5 +23,4 @@ private:
 
 };
 
-
 #endif //PROGETTO_LABORATORIO_CLIENT_H
