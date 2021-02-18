@@ -3,3 +3,6 @@
 //
 
 #include "../Headers/FileManagement.h"
+
+FileManagement::FileManagement(const std::string &fileName, const std::string &filePath) : fileName(fileName),
+                                                                                           filePath(filePath) {}
