@@ -3,4 +3,4 @@ project(Progetto_Laboratorio)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Progetto_Laboratorio main.cpp)
+add_executable(Progetto_Laboratorio Sources/main.cpp Sources/Client.cpp Headers/Client.h Sources/BankAccount.cpp Headers/BankAccount.h Sources/Transaction.cpp Headers/Transaction.h Sources/Transaction.cpp Headers/Transaction.h)
