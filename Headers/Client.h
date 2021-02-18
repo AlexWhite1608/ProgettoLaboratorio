@@ -5,11 +5,10 @@
 #include <string>
 #include <vector>
 #include "BankAccount.h"
+#include "clientType.h"
 
 #ifndef PROGETTO_LABORATORIO_CLIENT_H
 #define PROGETTO_LABORATORIO_CLIENT_H
-
-enum ClientType {Private, Company};
 
 class Client {
 
