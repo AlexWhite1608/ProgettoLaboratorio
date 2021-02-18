@@ -7,7 +7,7 @@ int main() {
 
     std::cout << "Data odierna: " << getDate() << std::endl;
 
-    std::cout << "Random string generated: " << randomString(6) << std::endl;
+    std::cout << "Random string generated: " << randomString(27) << std::endl;
 
     return 0;
 }

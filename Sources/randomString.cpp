@@ -11,7 +11,7 @@ std::string randomString(unsigned short int length){
     auto randomChar = []() -> char{
         const char charset[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         const unsigned short int maxIndex = (sizeof(charset) - 1);
-        return charset[rand() & maxIndex];
+        return charset[rand() % maxIndex];
     };
 
     std::string string(length, 0);
