@@ -7,6 +7,10 @@
 #include "Transaction.h"
 #include "clientType.h"
 
+const unsigned short int INITIAL_TRANSACTION_SUM = 100; //the minimum sum required to open a new bank account
+const unsigned short int ID_LENGTH = 8; //the length of the ID code of the bank
+const unsigned short int IBAN_LENGTH = 27; //the length of the IBAN code of the bank
+
 #ifndef PROGETTO_LABORATORIO_BANKACCOUNT_H
 #define PROGETTO_LABORATORIO_BANKACCOUNT_H
 
@@ -16,10 +20,12 @@ public:
     BankAccount(const std::string &id, const std::string &iban, float balance,
                 const std::vector<Transaction*> &transactions);
 
-    //when you create a new bank account it return the ID of the account
-    std::string createAccount(const std::string name, ClientType clientType, Transaction* initialTransaction);
+    BankAccount(){};
 
-    bool deleteAccount(std::string id);
+    //when you create a new bank account it return the ID of the account
+    void createAccount(const std::string name, ClientType clientType, Transaction* initialTransaction);
+
+    //bool deleteAccount(std::string id);
 
     bool updateAccount(std::string id);
 

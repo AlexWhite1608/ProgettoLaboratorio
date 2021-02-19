@@ -17,7 +17,7 @@ public:
     //it prints the latest transaction
     void printTransaction();
 
-    virtual bool execute() = 0;
+    virtual float execute(float sum) = 0;
 
 private:
     std::string id;
