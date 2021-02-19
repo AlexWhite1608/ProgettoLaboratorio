@@ -8,14 +8,14 @@
 Client::Client(const std::string &name, ClientType clientType, BankAccount* &bankAccount) : name(
         name), clientType(clientType), bankAccount(bankAccount) {}
 
-bool Client::createBankAccount(const std::string name, ClientType clientType, Transaction* initialTransaction){
+void Client::createBankAccount(const std::string name, ClientType clientType, Transaction* initialTransaction){
 
-    BankAccount* bankAccount = new BankAccount();
+    bankAccount = new BankAccount();
     bankAccount->createAccount(name, clientType, initialTransaction);
 
 }
 
-bool Client::doTransaction(Transaction *transaction, float sum) {
-
+void Client::doTransaction(Transaction *transaction, float sum) {
+    bankAccount->doTransaction(transaction, sum);
 }
 
