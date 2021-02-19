@@ -5,13 +5,17 @@
 #include "../Headers/Client.h"
 #include "../Headers/BankAccount.h"
 
-Client::Client(const std::string &name, ClientType clientType, const std::vector<BankAccount*> &bankAccounts) : name(
-        name), clientType(clientType), bankAccounts(bankAccounts) {}
+Client::Client(const std::string &name, ClientType clientType, BankAccount* &bankAccount) : name(
+        name), clientType(clientType), bankAccount(bankAccount) {}
 
 bool Client::createBankAccount(const std::string name, ClientType clientType, Transaction* initialTransaction){
 
     BankAccount* bankAccount = new BankAccount();
     bankAccount->createAccount(name, clientType, initialTransaction);
-    bankAccounts.push_back(bankAccount);
+
+}
+
+bool Client::doTransaction(Transaction *transaction, float sum) {
+
 }
 

@@ -29,7 +29,7 @@ public:
 
     bool updateAccount(std::string id);
 
-    bool doTransaction(Transaction* transaction);
+    bool doTransaction(Transaction* transaction, float sum);
 
 private:
     std::string id;
