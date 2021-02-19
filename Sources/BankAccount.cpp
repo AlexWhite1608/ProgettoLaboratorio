@@ -19,7 +19,7 @@ void BankAccount::BankAccount::createAccount(const std::string name, ClientType 
 
     //the initial transaction requires a minimal sum to initialize the balance
     //refresh the balance
-    balance = initialTransaction->execute(INITIAL_TRANSACTION_SUM, "Transazione iniziale", name, "Banca");
+    balance = initialTransaction->execute("Transazione iniziale", name, "Banca", clientType);
     transactions.push_back(initialTransaction);
 }
 
