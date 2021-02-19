@@ -22,3 +22,21 @@ float Payment::execute(float sum, const std::string &description, const std::str
 
     return 0 - amount;
 }
+
+float Payment::execute(const std::string &description, const std::string &addresser, const std::string &addressee,
+                       ClientType clientType) {
+    id = randomString(ID_LENGTH);
+
+    this->description = description;
+    this->addresser = addresser;
+    this->addressee = addressee;
+
+    if(clientType == ClientType::Private)
+        this->amount = INITIAL_TRANSACTION_SUM_PRIVATE - (INITIAL_TRANSACTION_SUM_PRIVATE * COMMISSION_FEE);
+    else if(clientType == ClientType::Company)
+        this->amount = INITIAL_TRANSACTION_SUM_COMPANY - (INITIAL_TRANSACTION_SUM_COMPANY * COMMISSION_FEE);
+
+    this->printTransaction();
+
+    return 0 - amount;
+}

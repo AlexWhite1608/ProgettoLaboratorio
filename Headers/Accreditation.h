@@ -3,9 +3,12 @@
 //
 
 #include "Transaction.h"
+#include "clientType.h"
 
 #ifndef PROGETTO_LABORATORIO_ACCREDITATION_H
 #define PROGETTO_LABORATORIO_ACCREDITATION_H
+
+
 
 class Accreditation : public Transaction {
 public:
@@ -14,6 +17,9 @@ public:
 
     float execute(float sum, const std::string &description, const std::string &addresser,
                   const std::string &addressee) override;
+
+    float execute(const std::string &description, const std::string &addresser,
+                          const std::string &addressee, ClientType clientType) override;
 
 private:
 

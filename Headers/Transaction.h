@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include "constantValues.h"
+#include "clientType.h"
 
 #ifndef PROGETTO_LABORATORIO_TRANSACTION_H
 #define PROGETTO_LABORATORIO_TRANSACTION_H
@@ -22,6 +23,10 @@ public:
 
     virtual float execute(float sum, const std::string &description, const std::string &addresser,
                           const std::string &addressee) = 0;
+
+    //used for the initial transaction. Different minium fee depends on the type of client
+    virtual float execute(const std::string &description, const std::string &addresser,
+                          const std::string &addressee, ClientType clientType) = 0;
 
 protected:
     std::string id;
