@@ -20,7 +20,8 @@ public:
 
     //bool deleteBankAccount(std::string id);
 
-    void doTransaction(Transaction* transaction, float sum);
+    void doTransaction(Transaction* transaction, float sum, const std::string &description, const std::string &addresser,
+                       const std::string &addressee);
 
     bool doAccountStatement(std::string fromDate, std::string toDate); //esegue estratto conto
 

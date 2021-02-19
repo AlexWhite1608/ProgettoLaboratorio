@@ -12,9 +12,9 @@ public:
     Payment(const std::string &id, const std::string &description, const std::string &addresser,
             const std::string &addressee, float amount);
 
-    float execute(float sum) override;
+    float execute(float sum, const std::string &description, const std::string &addresser,
+                  const std::string &addressee) override;
 
-private:
 };
 
 #endif //PROGETTO_LABORATORIO_PAYMENT_H

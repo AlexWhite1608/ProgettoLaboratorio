@@ -15,7 +15,8 @@ void Client::createBankAccount(const std::string name, ClientType clientType, Tr
 
 }
 
-void Client::doTransaction(Transaction *transaction, float sum) {
-    bankAccount->doTransaction(transaction, sum);
+void Client::doTransaction(Transaction *transaction, float sum, const std::string &description, const std::string &addresser,
+                           const std::string &addressee) {
+    bankAccount->doTransaction(transaction, sum, description, addresser, addressee);
 }
 

@@ -23,8 +23,9 @@ void BankAccount::BankAccount::createAccount(const std::string name, ClientType 
     transactions.push_back(initialTransaction);
 }
 
-void BankAccount::doTransaction(Transaction *transaction, float sum) {
-    balance += transaction->execute(sum);
+void BankAccount::doTransaction(Transaction *transaction, float sum, const std::string &description, const std::string &addresser,
+                                const std::string &addressee) {
+    balance += transaction->execute(sum, description, addresser, addressee);
     transactions.push_back(transaction);
 }
 
