@@ -5,11 +5,12 @@
 #include "../Headers/FileManagement.h"
 #include "../Headers/Transaction.h"
 #include "../Headers/BankAccount.h"
+#include "../Headers/constantValues.h"
 #include <fstream>
 #include <iostream>
 
-FileManagement::FileManagement(const std::string &filePath) :
-        filePath(filePath) {
+FileManagement::FileManagement() :
+        filePath(FILE_PATH) {
 
     this->createFile();
 }

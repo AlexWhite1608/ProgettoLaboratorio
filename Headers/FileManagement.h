@@ -10,9 +10,7 @@
 
 class FileManagement{
 public:
-    FileManagement(const std::string &filePath);
-
-    FileManagement(){};
+    FileManagement();
 
     bool createFile();
 
