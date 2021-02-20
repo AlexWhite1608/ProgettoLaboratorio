@@ -32,3 +32,22 @@ bool FileManagement::writeTransaction(Transaction *transaction) {
     file.close();
     return false;
 }
+
+bool FileManagement::readAll() {
+
+    std::fstream file;
+    file.open("C://Dev//C++//Progetto_Laboratorio//OutputFiles/AccountStatement.txt");
+    std::string line;
+
+    if (file.is_open())
+    {
+        while ( getline (file,line) )
+        {
+            std::cout << line << '\n';
+        }
+        file.close();
+    } else
+        std::cout << "Impossibile scrivere la transazione, errore apertura file!" << std::endl;
+
+    return false;
+}
