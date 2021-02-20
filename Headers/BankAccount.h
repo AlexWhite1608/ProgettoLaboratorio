@@ -29,6 +29,14 @@ public:
     void doTransaction(Transaction* transaction, float sum, const std::string &description, const std::string &addresser,
                        const std::string &addressee);
 
+    const std::string &getId() const {
+        return id;
+    }
+
+    const std::string &getIban() const {
+        return iban;
+    }
+
 private:
     std::string id;
     std::string iban;

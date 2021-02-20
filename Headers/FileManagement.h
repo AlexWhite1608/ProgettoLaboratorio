@@ -14,7 +14,7 @@ public:
 
     FileManagement(){};
 
-    //bool createFile();
+    bool createFile();
 
     //bool deleteFile();
 

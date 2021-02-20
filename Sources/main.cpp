@@ -3,11 +3,8 @@
 #include "../Headers/randomString.h"
 
 int main() {
-    std::cout << "Inizializzazione del progetto!" << std::endl;
 
-    std::cout << "Data odierna: " << getDate() << std::endl;
-
-    std::cout << "Random string generated: " << randomString(27) << std::endl;
+    //initialize the FileManagement to write the bank account attributes
 
     return 0;
 }

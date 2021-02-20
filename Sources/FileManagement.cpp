@@ -4,11 +4,15 @@
 
 #include "../Headers/FileManagement.h"
 #include "../Headers/Transaction.h"
+#include "../Headers/BankAccount.h"
 #include <fstream>
 #include <iostream>
 
 FileManagement::FileManagement(const std::string &filePath) :
-        filePath(filePath) {}
+        filePath(filePath) {
+
+    this->createFile();
+}
 
 bool FileManagement::writeTransaction(Transaction *transaction) {
 
@@ -50,4 +54,18 @@ bool FileManagement::readAll() {
         std::cout << "Impossibile scrivere la transazione, errore apertura file!" << std::endl;
 
     return false;
+}
+
+bool FileManagement::createFile() {
+    std::fstream file;
+    file.open(filePath);
+
+    if(file.is_open()){
+        BankAccount bankAccount;
+        file << bankAccount.getId() << std::endl;
+        file << bankAccount.getIban() << std::endl;
+        file << "------------------------------------------------------" << std::endl;
+        return true;
+    } else
+        return false;
 }
