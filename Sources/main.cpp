@@ -11,6 +11,7 @@
 int main() {
 
     //TODO initialize the FileManagement to write the bank account attributes
+    FileManagement* fileManagement = new FileManagement("C:\\Dev\\C++\\Progetto_Laboratorio\\OutputFiles\\AccountStatement.txt");
 
     BankAccount* bankAccount1 = new BankAccount();
     Client* client1 = new Client("Alessandro Bianco", ClientType::Private, bankAccount1);
@@ -21,7 +22,7 @@ int main() {
     Transaction* newTransaction = new Accreditation(randomString(ID_LENGTH), "Stipendio", "Lavoro", "Alessandro Bianco", 1765.78, getDate());
     client1->doTransaction(newTransaction);
 
-    /*FileManagement* fileManagement = new FileManagement("C://Dev//C++//Progetto_Laboratorio//OutputFiles/AccountStatement.txt");
+    /*
     client1->doAccountStatement();*/
 
 }
