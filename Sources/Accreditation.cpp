@@ -26,6 +26,7 @@ float Accreditation::execute(float sum, const std::string &description, const st
     return amount;
 }
 
+//used for the first transaction when the account is created
 float Accreditation::execute(const std::string &description, const std::string &addresser, const std::string &addressee,
                              ClientType clientType) {
     id = randomString(ID_LENGTH);

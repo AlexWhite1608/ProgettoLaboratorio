@@ -10,13 +10,15 @@
 
 class FileManagement{
 public:
-    FileManagement(const std::string &fileName, const std::string &filePath);
+    FileManagement(const std::string &filePath);
 
-    bool createFile();
+    FileManagement(){};
 
-    bool deleteFile();
+    //bool createFile();
 
-    bool readTransaction(std::string id);
+    //bool deleteFile();
+
+    //bool readTransaction(std::string id);
 
     bool writeTransaction(Transaction* transaction);
 
@@ -25,7 +27,6 @@ public:
     bool readAll();
 
 private:
-    std::string fileName;
     std::string filePath;
 };
 

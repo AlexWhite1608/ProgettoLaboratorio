@@ -28,6 +28,16 @@ public:
     virtual float execute(const std::string &description, const std::string &addresser,
                           const std::string &addressee, ClientType clientType) = 0;
 
+    const std::string &getId() const;
+
+    const std::string &getDescription() const;
+
+    const std::string &getAddresser() const;
+
+    const std::string &getAddressee() const;
+
+    float getAmount() const;
+
 protected:
     std::string id;
     std::string description;

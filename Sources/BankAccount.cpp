@@ -4,7 +4,7 @@
 
 #include "../Headers/BankAccount.h"
 #include "../Headers/randomString.h"
-#include <algorithm>
+#include "../Headers/FileManagement.h"
 
 BankAccount::BankAccount(const std::string &id, const std::string &iban, float balance,
                          const std::vector<Transaction*> &transactions) : id(id), iban(iban), balance(balance),
@@ -27,6 +27,9 @@ void BankAccount::doTransaction(Transaction *transaction, float sum, const std::
                                 const std::string &addressee) {
     balance += transaction->execute(sum, description, addresser, addressee);
     transactions.push_back(transaction);
+
+    FileManagement fileManagement;
+    fileManagement.writeTransaction(transaction);
 }
 
 
