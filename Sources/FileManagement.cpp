@@ -17,6 +17,7 @@ bool FileManagement::writeTransaction(Transaction *transaction) {
 
     if (file.is_open()) {
         file << "ID: " << transaction->getId() << std::endl;
+        file << "Data e ora: " << transaction->getDate() << std::endl;
         file << "Descrizione: " << transaction->getDescription() << std::endl;
         file << "Mittente: " << transaction->getAddresser() << std::endl;
         file << "Destinatario: " << transaction->getAddressee() << std::endl;

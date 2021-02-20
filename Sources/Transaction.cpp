@@ -40,3 +40,7 @@ const std::string &Transaction::getAddressee() const {
 float Transaction::getAmount() const {
     return amount;
 }
+
+const std::string &Transaction::getDate() const {
+    return date;
+}

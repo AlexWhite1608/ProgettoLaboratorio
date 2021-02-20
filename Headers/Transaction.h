@@ -38,6 +38,8 @@ public:
 
     float getAmount() const;
 
+    const std::string &getDate() const;
+
 protected:
     std::string id;
     std::string description;
