@@ -12,6 +12,7 @@ Transaction::Transaction(const std::string &id, const std::string &description, 
 
 void Transaction::printTransaction() {
     std::cout << "Transazione eseguita!" << std::endl;
+    std::cout << "Data e ora: " <<  date << std::endl;
     std::cout << "ID: " << id << std::endl;
     std::cout << "Descrizione: " << description << std::endl;
     std::cout << "Mittente: " << addresser << std::endl;

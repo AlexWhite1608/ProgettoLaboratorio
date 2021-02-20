@@ -43,6 +43,7 @@ protected:
     std::string description;
     std::string addresser; //mittente
     std::string addressee; //destinatario
+    std::string date;
     float amount;
 
 };

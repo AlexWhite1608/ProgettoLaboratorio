@@ -5,6 +5,7 @@
 #include "../Headers/Accreditation.h"
 #include "../Headers/randomString.h"
 #include "../Headers/constantValues.h"
+#include "../Headers/getDate.h"
 
 Accreditation::Accreditation(const std::string &id, const std::string &description, const std::string &addresser,
                              const std::string &addressee, float amount) : Transaction(id, description, addresser,
@@ -20,6 +21,7 @@ float Accreditation::execute(float sum, const std::string &description, const st
     this->addresser = addresser;
     this->addressee = addressee;
     this->amount = sum - (sum * COMMISSION_FEE);
+    this->date = getDate();
 
     this->printTransaction();
 

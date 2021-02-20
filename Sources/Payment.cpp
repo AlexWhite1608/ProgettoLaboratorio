@@ -4,6 +4,7 @@
 
 #include "../Headers/Payment.h"
 #include "../Headers/randomString.h"
+#include "../Headers/getDate.h"
 
 Payment::Payment(const std::string &id, const std::string &description, const std::string &addresser,
                  const std::string &addressee, float amount) : Transaction(id, description, addresser, addressee,
@@ -17,6 +18,7 @@ float Payment::execute(float sum, const std::string &description, const std::str
     this->addresser = addresser;
     this->addressee = addressee;
     this->amount = sum - (sum * COMMISSION_FEE);
+    this->date = getDate();
 
     this->printTransaction();
 
