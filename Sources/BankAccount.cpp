@@ -21,6 +21,9 @@ void BankAccount::BankAccount::createAccount(const std::string name, ClientType 
     //refresh the balance
     balance = initialTransaction->execute("Transazione iniziale", name, "Banca", clientType);
     transactions.push_back(initialTransaction);
+
+    FileManagement fileManagement;
+    fileManagement.writeTransaction(initialTransaction);
 }
 
 void BankAccount::doTransaction(Transaction *transaction, float sum, const std::string &description, const std::string &addresser,
