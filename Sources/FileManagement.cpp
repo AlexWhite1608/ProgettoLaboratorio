@@ -17,7 +17,7 @@ FileManagement::FileManagement(const std::string &filePath) :
 bool FileManagement::writeTransaction(Transaction *transaction) {
 
     std::fstream file;
-    file.open("C://Dev//C++//Progetto_Laboratorio//OutputFiles/AccountStatement.txt");
+    file.open(filePath);
 
     if (file.is_open()) {
         file << "ID: " << transaction->getId() << std::endl;
@@ -40,7 +40,7 @@ bool FileManagement::writeTransaction(Transaction *transaction) {
 bool FileManagement::readAll() {
 
     std::fstream file;
-    file.open("C://Dev//C++//Progetto_Laboratorio//OutputFiles/AccountStatement.txt");
+    file.open(filePath);
     std::string line;
 
     if (file.is_open())
@@ -62,8 +62,9 @@ bool FileManagement::createFile() {
 
     if(file.is_open()){
         BankAccount bankAccount;
-        file << bankAccount.getId() << std::endl;
-        file << bankAccount.getIban() << std::endl;
+        file << "ID del conto: " << bankAccount.getId() << std::endl;
+        file << "IBAN del conto: " << bankAccount.getIban() << std::endl;
+        file << "Bilancio attuale: " << bankAccount.getBalance() << std::endl;
         file << "------------------------------------------------------" << std::endl;
         return true;
     } else

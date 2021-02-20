@@ -37,6 +37,10 @@ public:
         return iban;
     }
 
+    float getBalance() const {
+        return balance;
+    }
+
 private:
     std::string id;
     std::string iban;

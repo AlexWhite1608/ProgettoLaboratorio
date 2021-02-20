@@ -25,7 +25,7 @@ float Payment::execute(float sum, const std::string &description, const std::str
     return 0 - amount;
 }
 
-/*float Payment::execute(const std::string &description, const std::string &addresser, const std::string &addressee,
+float Payment::execute(const std::string &description, const std::string &addresser, const std::string &addressee,
                        ClientType clientType) {
     id = randomString(ID_LENGTH);
 
@@ -41,4 +41,4 @@ float Payment::execute(float sum, const std::string &description, const std::str
     this->printTransaction();
 
     return 0 - amount;
-}*/
+}
