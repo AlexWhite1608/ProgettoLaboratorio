@@ -11,7 +11,7 @@
 class Payment : public Transaction {
 public:
     Payment(const std::string &id, const std::string &description, const std::string &addresser,
-            const std::string &addressee, float amount);
+            const std::string &addressee, float amount, const std::string &date);
 
     float execute(float sum, const std::string &description, const std::string &addresser,
                   const std::string &addressee) override;

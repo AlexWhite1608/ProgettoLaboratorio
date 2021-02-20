@@ -7,8 +7,8 @@
 #include "../Headers/getDate.h"
 
 Payment::Payment(const std::string &id, const std::string &description, const std::string &addresser,
-                 const std::string &addressee, float amount) : Transaction(id, description, addresser, addressee,
-                                                                           amount) {}
+                 const std::string &addressee, float amount, const std::string &date) : Transaction(id, description, addresser, addressee,
+                                                                           amount, date) {}
 
 float Payment::execute(float sum, const std::string &description, const std::string &addresser,
                        const std::string &addressee) {

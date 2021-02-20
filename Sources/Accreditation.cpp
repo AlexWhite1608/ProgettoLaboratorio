@@ -8,8 +8,8 @@
 #include "../Headers/getDate.h"
 
 Accreditation::Accreditation(const std::string &id, const std::string &description, const std::string &addresser,
-                             const std::string &addressee, float amount) : Transaction(id, description, addresser,
-                                                                                       addressee, amount) {
+                             const std::string &addressee, float amount, const std::string &date) : Transaction(id, description, addresser,
+                                                                                       addressee, amount, date) {
 
 }
 

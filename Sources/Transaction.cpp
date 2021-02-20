@@ -6,13 +6,13 @@
 #include <iostream>
 
 Transaction::Transaction(const std::string &id, const std::string &description, const std::string &addresser,
-                         const std::string &addressee, float amount) : id(id), description(description),
+                         const std::string &addressee, float amount, const std::string &date) : id(id), description(description),
                                                                        addresser(addresser), addressee(addressee),
-                                                                       amount(amount) {}
+                                                                       amount(amount), date(date) {}
 
 void Transaction::printTransaction() {
     std::cout << "Transazione eseguita!" << std::endl;
-    std::cout << "Data e ora: " <<  date << std::endl;
+    std::cout << "Data e ora: " << date << std::endl;
     std::cout << "ID: " << id << std::endl;
     std::cout << "Descrizione: " << description << std::endl;
     std::cout << "Mittente: " << addresser << std::endl;
