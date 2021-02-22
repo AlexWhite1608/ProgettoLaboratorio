@@ -6,9 +6,10 @@
 #include "../Headers/randomString.h"
 #include "../Headers/FileManagement.h"
 
-BankAccount::BankAccount(const std::string &id, const std::string &iban, float balance,
-                         const std::vector<Transaction*> &transactions) : id(id), iban(iban), balance(balance),
-                                                                          transactions(transactions) {}
+BankAccount::BankAccount(const std::string &id, const std::string &iban, float balance) : id(id), iban(iban), balance(balance) {
+    FileManagement file;
+    file.createFile();
+}
 
 void BankAccount::BankAccount::createAccount(const std::string name, ClientType clientType, Transaction *initialTransaction) {
 

@@ -12,10 +12,7 @@
 #include <iostream>
 
 FileManagement::FileManagement() :
-        filePath(FILE_PATH) {
-
-    this->createFile();
-}
+        filePath(FILE_PATH) {}
 
 bool FileManagement::writeTransaction(Transaction *transaction) {
 

@@ -7,16 +7,16 @@
 #include "../Headers/FileManagement.h"
 #include "../Headers/Accreditation.h"
 #include "../Headers/Payment.h"
-#include <typeinfo>
 
 int main() {
 
     //TODO initialize the FileManagement to write the bank account attributes
 
-    BankAccount* bankAccount1 = new BankAccount();
-    Client* client1 = new Client("Alessandro Bianco", ClientType::Private, bankAccount1);
+    BankAccount* bankAccount1 = new BankAccount(randomString(ID_LENGTH), randomString(IBAN_LENGTH), 0);
 
     Transaction* initialTransaction = new Accreditation(randomString(ID_LENGTH), "Transazione iniziale", "Alessandro Bianco", "Banca", INITIAL_TRANSACTION_SUM_PRIVATE, getDate());
+    Client* client1 = new Client("Alessandro Bianco", ClientType::Private, bankAccount1);
+
     client1->createBankAccount(initialTransaction);
 
     Transaction* newTransaction = new Accreditation(randomString(ID_LENGTH), "Stipendio", "Lavoro", "Alessandro Bianco", 1765.78, getDate());

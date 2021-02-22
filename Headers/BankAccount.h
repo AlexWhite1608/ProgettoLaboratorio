@@ -7,6 +7,7 @@
 #include "Transaction.h"
 #include "clientType.h"
 #include "constantValues.h"
+#include "FileManagement.h"
 
 #ifndef PROGETTO_LABORATORIO_BANKACCOUNT_H
 #define PROGETTO_LABORATORIO_BANKACCOUNT_H
@@ -14,8 +15,7 @@
 class BankAccount {
 
 public:
-    BankAccount(const std::string &id, const std::string &iban, float balance,
-                const std::vector<Transaction*> &transactions);
+    BankAccount(const std::string &id, const std::string &iban, float balance);
 
     BankAccount(){};
 
@@ -44,7 +44,7 @@ public:
 private:
     std::string id;
     std::string iban;
-    float balance;
+    float balance = 0;
     std::vector<Transaction*> transactions;
 
 };
