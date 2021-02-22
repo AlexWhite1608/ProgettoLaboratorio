@@ -7,6 +7,7 @@
 #include "../Headers/FileManagement.h"
 #include "../Headers/Accreditation.h"
 #include "../Headers/Payment.h"
+#include <typeinfo>
 
 int main() {
 
@@ -20,6 +21,9 @@ int main() {
 
     Transaction* newTransaction = new Accreditation(randomString(ID_LENGTH), "Stipendio", "Lavoro", "Alessandro Bianco", 1765.78, getDate());
     client1->doTransaction(newTransaction);
+
+    Transaction* newTransaction2 = new Payment(randomString(ID_LENGTH), "Tasse", "Alessandro Bianco", "Stato", 851.21, getDate());
+    client1->doTransaction(newTransaction2);
 
     /*
     client1->doAccountStatement();*/
