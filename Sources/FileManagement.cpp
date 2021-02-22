@@ -18,7 +18,7 @@ FileManagement::FileManagement() :
 bool FileManagement::writeTransaction(Transaction *transaction) {
 
     std::fstream file;
-    file.open(filePath);
+    file.open(filePath, std::fstream::app);
 
     if (file.is_open()) {
         file << "ID: " << transaction->getId() << std::endl;
