@@ -16,11 +16,11 @@ public:
     Client(const std::string &name, ClientType clientType, BankAccount* bankAccount);
 
     //must add the new bank account in the vector
-    void createBankAccount(BankAccount* bankAccount, Transaction* initialTransaction);
+    void createBankAccount(Transaction* initialTransaction);
 
     //bool deleteBankAccount(std::string id);
 
-    void doTransaction(BankAccount* bankAccount, Transaction* transaction);
+    void doTransaction(Transaction* transaction);
 
     bool doAccountStatement(); //esegue estratto conto
 

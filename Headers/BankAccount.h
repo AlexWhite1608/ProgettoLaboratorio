@@ -23,8 +23,6 @@ public:
 
     //bool deleteAccount(std::string id);
 
-    bool updateAccount(std::string id);
-
     void doTransaction(Transaction* transaction, float sum, const std::string &description, const std::string &addresser,
                        const std::string &addressee);
 
@@ -44,7 +42,7 @@ private:
     std::string id;
     std::string iban;
     float balance;
-    std::vector<Transaction*> transactions;
+    std::vector<Transaction*> transactions; //FIXME trovagli un'utilità!
 
 };
 
