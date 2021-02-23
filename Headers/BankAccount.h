@@ -44,7 +44,7 @@ public:
 private:
     std::string id;
     std::string iban;
-    float balance = 0;
+    float balance;
     std::vector<Transaction*> transactions;
 
 };

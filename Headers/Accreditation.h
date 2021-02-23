@@ -23,7 +23,6 @@ public:
 
 private:
 
-
 };
 
 #endif //PROGETTO_LABORATORIO_ACCREDITATION_H

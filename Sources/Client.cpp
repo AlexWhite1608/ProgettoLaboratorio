@@ -6,17 +6,15 @@
 #include "../Headers/BankAccount.h"
 #include "../Headers/FileManagement.h"
 
-Client::Client(const std::string &name, ClientType clientType, BankAccount* &bankAccount) : name(
+Client::Client(const std::string &name, ClientType clientType, BankAccount* bankAccount) : name(
         name), clientType(clientType), bankAccount(bankAccount) {}
 
-void Client::createBankAccount(Transaction* initialTransaction){
-
-    bankAccount = new BankAccount();
+void Client::createBankAccount(BankAccount* bankAccount, Transaction* initialTransaction){
     bankAccount->createAccount(name, clientType, initialTransaction);
 
 }
 
-void Client::doTransaction(Transaction *transaction) {
+void Client::doTransaction(BankAccount* bankAccount, Transaction *transaction) {
     bankAccount->doTransaction(transaction, transaction->getAmount(), transaction->getDescription(), transaction->getAddresser(), transaction->getAddressee());
 }
 

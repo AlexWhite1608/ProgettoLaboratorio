@@ -3,6 +3,7 @@
 //
 
 #include "../Headers/Transaction.h"
+#include "../Headers/BankAccount.h"
 #include <iostream>
 
 Transaction::Transaction(const std::string &id, const std::string &description, const std::string &addresser,

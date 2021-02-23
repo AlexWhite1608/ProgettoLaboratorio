@@ -42,7 +42,7 @@ float Accreditation::execute(const std::string &description, const std::string &
     else if(clientType == ClientType::Company)
         this->amount = INITIAL_TRANSACTION_SUM_COMPANY - (INITIAL_TRANSACTION_SUM_COMPANY * COMMISSION_FEE);
 
-    this->printTransaction();
+    //this->printTransaction();
 
     return amount;
 }

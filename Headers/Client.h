@@ -13,14 +13,14 @@
 class Client {
 
 public:
-    Client(const std::string &name, ClientType clientType, BankAccount* &bankAccount);
+    Client(const std::string &name, ClientType clientType, BankAccount* bankAccount);
 
     //must add the new bank account in the vector
-    void createBankAccount(Transaction* initialTransaction);
+    void createBankAccount(BankAccount* bankAccount, Transaction* initialTransaction);
 
     //bool deleteBankAccount(std::string id);
 
-    void doTransaction(Transaction* transaction);
+    void doTransaction(BankAccount* bankAccount, Transaction* transaction);
 
     bool doAccountStatement(); //esegue estratto conto
 
