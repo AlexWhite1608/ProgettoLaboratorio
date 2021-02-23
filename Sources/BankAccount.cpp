@@ -6,8 +6,7 @@
 #include <fstream>
 #include "../Headers/BankAccount.h"
 #include "../Headers/randomString.h"
-#include "../Headers/FileManagement.h"
-#include "../Headers/constantValues.h"
+#include "../Headers/writeTransaction.h"
 
 BankAccount::BankAccount(const std::string &id, const std::string &iban, float balance) : id(id), iban(iban), balance(balance) {
     std::fstream file;
@@ -16,7 +15,7 @@ BankAccount::BankAccount(const std::string &id, const std::string &iban, float b
     if(file.is_open()) {
         file << "ID del conto: " << this->getId() << std::endl;
         file << "IBAN del conto: " << this->getIban() << std::endl;
-        file << "Bilancio attuale: " << this->getBalance() << std::endl;
+        file << "Bilancio iniziale: " << this->getBalance() << std::endl;
         file << "------------------------------------------------------" << std::endl;
     }
 }
@@ -32,8 +31,7 @@ void BankAccount::BankAccount::createAccount(const std::string name, ClientType 
     balance = initialTransaction->execute("Transazione iniziale", name, "Banca", clientType);
     transactions.push_back(initialTransaction);
 
-    FileManagement fileManagement;
-    fileManagement.writeTransaction(initialTransaction);
+    writeTransaction(this, initialTransaction);
 }
 
 void BankAccount::doTransaction(Transaction *transaction, float sum, const std::string &description, const std::string &addresser,
@@ -42,8 +40,7 @@ void BankAccount::doTransaction(Transaction *transaction, float sum, const std::
     transactions.push_back(transaction);
     transaction->printTransaction();
 
-    FileManagement fileManagement;
-    fileManagement.writeTransaction(transaction);
+    writeTransaction(this, transaction);
 }
 
 

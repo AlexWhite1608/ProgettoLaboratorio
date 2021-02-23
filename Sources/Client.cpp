@@ -4,7 +4,7 @@
 
 #include "../Headers/Client.h"
 #include "../Headers/BankAccount.h"
-#include "../Headers/FileManagement.h"
+#include "../Headers/readAll.h"
 
 Client::Client(const std::string &name, ClientType clientType, BankAccount* bankAccount) : name(
         name), clientType(clientType), bankAccount(bankAccount) {}
@@ -20,8 +20,7 @@ void Client::doTransaction(BankAccount* bankAccount, Transaction *transaction) {
 
 bool Client::doAccountStatement() {
 
-    FileManagement fileManagement;
-    if(fileManagement.readAll())
+    if(readAll())
         return true;
     else
         return false;
