@@ -3,13 +3,22 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include "../Headers/BankAccount.h"
 #include "../Headers/randomString.h"
 #include "../Headers/FileManagement.h"
+#include "../Headers/constantValues.h"
 
 BankAccount::BankAccount(const std::string &id, const std::string &iban, float balance) : id(id), iban(iban), balance(balance) {
-    FileManagement file;
-    file.createFile();
+    std::fstream file;
+    file.open(FILE_PATH);
+
+    if(file.is_open()) {
+        file << "ID del conto: " << this->getId() << std::endl;
+        file << "IBAN del conto: " << this->getIban() << std::endl;
+        file << "Bilancio attuale: " << this->getBalance() << std::endl;
+        file << "------------------------------------------------------" << std::endl;
+    }
 }
 
 void BankAccount::BankAccount::createAccount(const std::string name, ClientType clientType, Transaction *initialTransaction) {
