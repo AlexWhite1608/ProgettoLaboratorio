@@ -25,7 +25,7 @@ bool writeTransaction(BankAccount* bankAccount, Transaction* transaction){
         file << "Mittente: " << transaction->getAddresser() << std::endl;
         file << "Destinatario: " << transaction->getAddressee() << std::endl;
         file << "Somma: " << transaction->getAmount() << std::endl;
-        file << "Bilancio attuale: " << bankAccount->getBalance() << std::endl;
+        file << "Nuovo Bilancio: " << bankAccount->getBalance() << std::endl;
         file << "------------------------------------------------------" << std::endl;
 
         file.close();

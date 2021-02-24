@@ -5,7 +5,6 @@
 #include <fstream>
 #include <iostream>
 #include "../Headers/readAll.h"
-#include "../Headers/constantValues.h"
 
 bool readAll(){
 

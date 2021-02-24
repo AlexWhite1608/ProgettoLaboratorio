@@ -21,9 +21,10 @@ int main() {
     Transaction* transaction2 = new Payment(randomString(ID_LENGTH), "Rata macchina", "Alessandro Bianco", "Concessionario", 450.89, getDate());
     client1->doTransaction(transaction2);
 
-    std::cout << "Bilancio: " << bankAccount->getBalance();
+    std::cout << "Bilancio: " << bankAccount->getBalance() << std::endl;
 
-    /*
-    client1->doAccountStatement();*/
+    std::cout << "-------------------------------------------------------------------------------------------------------------" << std::endl;
+
+    client1->doAccountStatement();
 
 }
