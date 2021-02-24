@@ -4,13 +4,18 @@
 
 #include <iostream>
 #include <fstream>
+#include <direct.h>
 #include "../Headers/BankAccount.h"
 #include "../Headers/randomString.h"
 #include "../Headers/writeTransaction.h"
 
 BankAccount::BankAccount(const std::string &id, const std::string &iban, float balance) : id(id), iban(iban), balance(balance) {
-    std::fstream file;
-    file.open(FILE_PATH);
+
+    _mkdir("..\\OutputFiles"); //it creates the dir that contains the account statement
+
+    std::fstream file("..\\OutputFiles\\AccountStatement.txt");
+    file.close();
+    file.open("..\\OutputFiles\\AccountStatement.txt");
 
     if(file.is_open()) {
         file << "ID del conto: " << this->getId() << std::endl;
@@ -18,6 +23,8 @@ BankAccount::BankAccount(const std::string &id, const std::string &iban, float b
         file << "Bilancio iniziale: " << this->getBalance() << std::endl;
         file << "------------------------------------------------------" << std::endl;
     }
+
+    file.close();
 }
 
 void BankAccount::BankAccount::createAccount(const std::string name, ClientType clientType, Transaction *initialTransaction) {

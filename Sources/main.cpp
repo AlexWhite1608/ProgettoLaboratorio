@@ -11,6 +11,8 @@ int main() {
 
     //TODO capisci come usare l'iban del conto nelle transazioni!
 
+    //TODO ogni volta che si esegue un pagamento verificare che sia possibile eseguirlo (ci devono essere i soldi in banca!)
+
     BankAccount* bankAccount = new BankAccount(randomString(ID_LENGTH), randomString(IBAN_LENGTH), 0);
 
     Client* client1 = new Client("Alessandro Bianco", ClientType::Private, bankAccount);

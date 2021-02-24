@@ -10,7 +10,7 @@
 bool writeTransaction(BankAccount* bankAccount, Transaction* transaction){
 
     std::fstream file;
-    file.open(FILE_PATH, std::fstream::app);
+    file.open("..\\OutputFiles\\AccountStatement.txt", std::fstream::app);
 
     if (file.is_open()) {
         //detects if the transaction is a payment/accreditation to write it on the file
@@ -33,6 +33,5 @@ bool writeTransaction(BankAccount* bankAccount, Transaction* transaction){
     } else
         std::cout << "Impossibile scrivere la transazione, errore apertura file!" << std::endl;
 
-    file.close();
     return false;
 }

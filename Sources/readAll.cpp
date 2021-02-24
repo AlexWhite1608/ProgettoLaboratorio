@@ -9,7 +9,7 @@
 bool readAll(){
 
     std::fstream file;
-    file.open(FILE_PATH);
+    file.open("..\\OutputFiles\\AccountStatement.txt");
     std::string line;
 
     if (file.is_open())
