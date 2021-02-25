@@ -38,7 +38,7 @@ float Payment::execute(const std::string &description, const std::string &addres
     else if(clientType == ClientType::Company)
         this->amount = INITIAL_TRANSACTION_SUM_COMPANY - (INITIAL_TRANSACTION_SUM_COMPANY * COMMISSION_FEE);
 
-    //this->printTransaction();
+    this->printTransaction();
 
     return 0 - amount;
 }

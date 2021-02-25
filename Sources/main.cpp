@@ -20,12 +20,12 @@ int main() {
     Transaction* initialTransaction = new Accreditation(randomString(ID_LENGTH), "Transazione iniziale", "Banca", "Alessandro Bianco", INITIAL_TRANSACTION_SUM_PRIVATE, getDate());
     client1->createBankAccount(initialTransaction);
 
-    Transaction* transaction2 = new Payment(randomString(ID_LENGTH), "Rata macchina", "Alessandro Bianco", "Concessionario", 450.89, getDate());
-    client1->doTransaction(transaction2);
+    /*Transaction* transaction2 = new Payment(randomString(ID_LENGTH), "Rata macchina", "Alessandro Bianco", "Concessionario", 450.89, getDate());
+    client1->doTransaction(transaction2);*/
 
     std::cout << "Bilancio: " << bankAccount->getBalance() << std::endl;
 
-    std::cout << "-------------------------------------------------------------------------------------------------------------" << std::endl;
+    std::cerr << "-------------------------------------------------------------------------------------------------------------" << std::endl;
 
     client1->doAccountStatement();
 
